@@ -1,6 +1,6 @@
 pipeline{
   agent {
-      label 'Node1'
+      label 'Node2'
   }
   tools {
     maven 'Maven3.8.6'
@@ -48,7 +48,7 @@ pipeline{
     stage('Tomcat'){
       steps {
         echo 'Pushing to Tomcat'
-        deploy adapters: [tomcat9(credentialsId: 'tomcat-cred', path: '', url: 'http://100.26.152.158:8080/')], contextPath: null, war: 'target/web-app.war'
+        deploy adapters: [tomcat9(credentialsId: 'tomcat-cred', path: '', url: 'http://18.210.18.134:8080/')], contextPath: null, war: 'target/web-app.war'
         echo 'Done'
       }
     }
